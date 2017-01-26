@@ -1,0 +1,2 @@
+class LdpagesController < ApplicationController
+end

@@ -1,0 +1,2 @@
+module LdpagesHelper
+end
