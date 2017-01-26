@@ -1,0 +1,2 @@
+class Ldpage < ApplicationRecord
+end
