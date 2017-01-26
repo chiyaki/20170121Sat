@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125074948) do
+ActiveRecord::Schema.define(version: 20170126085657) do
 
   create_table "ldpages", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20170125074948) do
     t.string   "image28"
     t.string   "image29"
     t.string   "image30"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
