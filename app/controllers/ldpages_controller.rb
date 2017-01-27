@@ -2,7 +2,11 @@ class LdpagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   layout 'blank'
   def edit
-    render :template => "templates/default"
+    @ldpage = Ldpage.find(params[:id])
+  end
+
+  def show
+    @ldpage = Ldpage.find(params[:id])
   end
 
   def new
@@ -13,7 +17,7 @@ class LdpagesController < ApplicationController
     @ldpage = Ldpage.new(ldpage_params)
     @ldpage.user = current_user
     if @ldpage.save
-      redirect_to edit_ldpage_path(@ldpage)
+      redirect_to ldpage_path(@ldpage)
     else
       redirect_to root_path
     end
