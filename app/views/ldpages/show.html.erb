@@ -1,4 +1,3 @@
-<%= simple_form_for @ldpage do |f| %>
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -8,7 +7,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= f.input_field :text01, placeholder: "项目名称"%>
+        <a class="navbar-brand" href="#"><%= @ldpage.text01 %></a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -22,9 +21,13 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container" style="text-align: center">
-      <h1><%= f.input_field :text02, placeholder: "一句话形容自己"%></h1>
-      <p><%= f.input_field :text03, placeholder: "简要的解释说明"%></p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button"><%= f.input_field :text04, placeholder: "CALL TO ACTION"%></a></p>
+      <div class="pull-right">
+        <%= link_to("修改landing page", edit_ldpage_path(@ldpage)) %>
+      </div>
+
+      <h1><%= @ldpage.text02 %></h1>
+      <p><%= @ldpage.text03 %></p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button"><%= @ldpage.text04 %></a></p>
     </div>
   </div>
 
@@ -32,16 +35,16 @@
     <!-- Example row of columns -->
     <div class="row">
       <div class="col-md-4">
-        <h2><%= f.input_field :text05, placeholder: "使用此服务的三大好处之一"%></h2>
-        <p><%= f.input_field :text06, placeholder: "简要的解释说明"%></p>
+        <h2><%= @ldpage.text05 %></h2>
+        <p><%= @ldpage.text06 %></p>
       </div>
       <div class="col-md-4">
-        <h2><%= f.input_field :text07, placeholder: "使用此服务的三大好处之二"%></h2>
-        <p><%= f.input_field :text08, placeholder: "简要的解释说明"%></p>
+        <h2><%= @ldpage.text07 %></h2>
+        <p><%= @ldpage.text08 %></p>
      </div>
       <div class="col-md-4">
-        <h2><%= f.input_field :text09, placeholder: "使用此服务的三大好处之三"%></h2>
-        <p><%= f.input_field :text10, placeholder: "简要的解释说明"%></p>
+        <h2><%= @ldpage.text09 %></h2>
+        <p><%= @ldpage.text10 %></p>
       </div>
     </div>
     <hr>
@@ -52,28 +55,26 @@
     <div class="row">
       <div class="col-lg-4">
         <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-        <h2><%= f.input_field :text11, placeholder: "使用者一"%></h2>
-        <p><%= f.input_field :text12, placeholder: "使用者见证"%></p>
+        <h2><%= @ldpage.text11 %></h2>
+        <p><%= @ldpage.text12 %></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-        <h2><%= f.input_field :text13, placeholder: "使用者二"%></h2>
-        <p><%= f.input_field :text14, placeholder: "使用者见证"%></p>
+        <h2><%= @ldpage.text13 %></h2>
+        <p><%= @ldpage.text14 %></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-        <h2><%= f.input_field :text15, placeholder: "使用者三"%></h2>
-        <p><%= f.input_field :text16, placeholder: "使用者见证"%></p>
+        <h2><%= @ldpage.text15 %></h2>
+        <p><%= @ldpage.text16 %></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
-    <p><a class="btn btn-primary btn-lg" href="#" role="button"><%= f.input_field :text17, placeholder: "再一次 CALL TO ACTION"%></a></p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button"><%= @ldpage.text17 %></a></p>
     <hr>
   </div>
 
   <div class="container">
     <footer>
-      <p><%= f.input_field :text18, placeholder: "footer信息"%></p>
+      <p><%= @ldpage.text18 %></p>
     </footer>
-    <%= f.submit "保存更改", class: "btn btn-primary", data: { disable_with: "保存中..." } %>
   </div> <!-- /container -->
-<% end %>
