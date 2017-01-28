@@ -32,6 +32,12 @@ class LdpagesController < ApplicationController
     end
   end
 
+  def destroy
+    @ldpage = Ldpage.find(params[:id])
+    @ldpage.destroy
+    redirect_to account_ldpages_path
+  end
+
   private
   def ldpage_params
     params.require(:ldpage).permit(:text01, :text02, :text03, :text04, :text05, :text06, :text07, :text08, :text09, :text10,
