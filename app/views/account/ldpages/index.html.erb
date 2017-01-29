@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="pull-right">
+    <%= link_to("新建landing page", new_ldpage_path, :class => "btn btn-default" ) %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>项目名称</th>
+        <th>一句话形容自己</th>
+        <th>操作</th>
+        <th>最后更新</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ldpages.each do |ldpage| %>
+      <tr>
+        <td>#</td>
+        <td><%= link_to(ldpage.text01, ldpage_path(ldpage)) %>
+        </td>
+        <td><%= ldpage.text02 %>
+        </td>
+        <td><%= link_to("编辑", edit_ldpage_path(ldpage)) %> |
+            <%= link_to("删除", ldpage_path(ldpage), :method => :delete, :data => { :confirm => "确定删除吗？" }) %>
+        </td>
+        <td><%= ldpage.updated_at %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

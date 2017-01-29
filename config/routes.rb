@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   resources :ldpages
   namespace :admin do
   end
+
+  namespace :account do
+    resources :ldpages
+  end
+
 end
