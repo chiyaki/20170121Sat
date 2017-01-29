@@ -1,0 +1,2 @@
+module SelectTemplateHelper
+end

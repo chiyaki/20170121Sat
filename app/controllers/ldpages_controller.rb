@@ -1,12 +1,18 @@
 class LdpagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   layout 'blank'
+  def choose_template
+  end
+
   def edit
     @ldpage = Ldpage.find(params[:id])
   end
 
   def show
     @ldpage = Ldpage.find(params[:id])
+  end
+
+  def choose_template
   end
 
   def new

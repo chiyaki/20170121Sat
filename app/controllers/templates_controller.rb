@@ -1,6 +1,14 @@
 class TemplatesController < ApplicationController
-  # def index
-  # end
+  def index
+    @templates = Template.all
+  end
+
+  def use_this_template
+    @ldpage = Ldpage.find(params[:id])
+    @template = Template.find(params[:id])
+    @ldpage.template = @template
+    @ldpage.save
+  end
   #
   # def use_this_template
   #   @ldpage = Ldpage.new(ldpage_params)

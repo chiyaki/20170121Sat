@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <% @templates.each do |template| %>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <%= link_to ("#") do %>
+        <% if template.image.present? %>
+          <%= image_tag(template.image.thumb) %>
+        <% else %>
+          <img src="http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width="200", class = "pic-with-border"/>
+        <% end %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
