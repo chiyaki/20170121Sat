@@ -1,0 +1,11 @@
+<div class="container">
+  <%= link_to("新建模板", new_template_path, class: "btn btn-lg btn-danger") %>
+  <div class="row">
+    <% @templates.each do |template| %>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <%= link_to("编辑", edit_template_path(template), class: "btn btn-lg btn-default") %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

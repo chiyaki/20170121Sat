@@ -1,23 +1,71 @@
 class LdpagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  layout 'blank'
-  def choose_template
-  end
+
 
   def edit
     @ldpage = Ldpage.find(params[:id])
+    if @ldpage.template == Template.first
+      render :template01
+    elsif @ldpage.template == Template.second
+      render :template02
+    end
   end
 
   def show
     @ldpage = Ldpage.find(params[:id])
   end
 
-  def choose_template
+  def new
+    @template = Template.find(params[:template_id])
+    @ldpage = Ldpage.new
+    render :edit
   end
 
-  def new
-    @ldpage = Ldpage.new
+  def create
+    @template = Template.find(params[:template_id])
+    @ldpage = Ldpage.new(ldpage_params)
+    @ldpage.template = @template
+    @ldpage.user = current_user
+    if @ldpage.save
+      redirect_to ldpage_path(@ldpage)
+    else
+      render :edit
+    end
   end
+
+  def use_this_template
+    @template = Template.find(params[:template_id])
+    @ldpage = Ldpage.new(ldpage_params)
+    @ldpage.user = current_user
+    @ldpage.template = @template
+    @ldpage.save
+    redirect_to :edit
+  end
+
+  def template01
+    @ldpage = Ldpage.find(params[:id])
+    @ldpage.temp
+    @ldpage.user = current_user
+    @ldpage.save!
+  end
+
+  def template02
+    @ldpage = Ldpage.find(params[:id])
+    @ldpage.user = current_user
+    @ldpage.save!
+  end
+
+
+  def use_template01
+    @ldpage = Ldpage.new(ldpage_params)
+    @ldpage.user = current_user
+    if @ldpage.save
+      redirect_to ldpage_path(@ldpage)
+    else
+      render "templates/_template01"
+    end
+  end
+
 
   def create
     @ldpage = Ldpage.new(ldpage_params)
@@ -25,7 +73,7 @@ class LdpagesController < ApplicationController
     if @ldpage.save
       redirect_to ldpage_path(@ldpage)
     else
-      redirect_to root_path
+      render "templates/_template01"
     end
   end
 
@@ -52,6 +100,6 @@ class LdpagesController < ApplicationController
                                    :image01, :image02, :image03, :image04, :image05, :image06, :image07, :image08, :image09, :image10,
                                    :image11, :image12, :image13, :image14, :image15, :image16, :image17, :image18, :image19, :image20,
                                    :image21, :image22, :image23, :image24, :image25, :image26, :image27, :image28, :image29, :image30,
-                                   :user_id)
+                                   :user_id, :template_id)
   end
 end

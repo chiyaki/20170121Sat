@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <%= link_to ("#") do %>
-        <img src="http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width="200"/>
-      <% end %>
+    <% @templates.each do |template| %>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <%= link_to(template.id, use_this_template_ldpage_path(@ldpage), method: :post, class: "btn btn-lg btn-danger") %>
+      </div>
+   <% end %>
     </div>
   </div>
 </div>

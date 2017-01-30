@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170126085657) do
+ActiveRecord::Schema.define(version: 20170130095047) do
 
   create_table "ldpages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "text01"
     t.text     "text02"
     t.text     "text03"
@@ -76,6 +76,12 @@ ActiveRecord::Schema.define(version: 20170126085657) do
     t.string   "image29"
     t.string   "image30"
     t.integer  "user_id"
+    t.integer  "template_id"
+  end
+
+  create_table "templates", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
