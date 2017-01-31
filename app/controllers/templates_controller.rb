@@ -1,21 +1,22 @@
 class TemplatesController < ApplicationController
+  before_action :authenticate_user!
+  layout "blank", only: [:new_ldpage]
+
   def index
     @templates = Template.all
   end
 
-  def use_this_template
-    @ldpage = Ldpage.find(params[:id])
+  def new_ldpage
     @template = Template.find(params[:id])
+    @ldpage = Ldpage.new
+    @ldpage.user = current_user
     @ldpage.template = @template
-    @ldpage.save
+    @ldpage.save!
+    if @ldpage.template == Template.first
+      render "ldpages/template01"
+    elsif @ldpage.template == Template.second
+      render "ldpages/template02"
+    end
   end
-  #
-  # def use_this_template
-  #   @ldpage = Ldpage.new(ldpage_params)
-  #   if @ldpage.save
-  #     redirect_to edit_ldpage_path(@ldpage)
-  #   else
-  #     render :new
-  #   end
-  # end
+
 end

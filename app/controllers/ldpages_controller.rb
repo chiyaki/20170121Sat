@@ -1,6 +1,14 @@
 class LdpagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-
+  layout "blank", only: [:edit, :show, :update]
+  def create
+    @ldpage = Ldpage.new(ldpage_params)
+    if @ldpage.save
+      redirect_to ldpage_path(@ldpage)
+    else
+      render "templates/new_ldpage"
+    end
+  end
 
   def edit
     @ldpage = Ldpage.find(params[:id])
@@ -13,69 +21,13 @@ class LdpagesController < ApplicationController
 
   def show
     @ldpage = Ldpage.find(params[:id])
-  end
-
-  def new
-    @template = Template.find(params[:template_id])
-    @ldpage = Ldpage.new
-    render :edit
-  end
-
-  def create
-    @template = Template.find(params[:template_id])
-    @ldpage = Ldpage.new(ldpage_params)
-    @ldpage.template = @template
-    @ldpage.user = current_user
-    if @ldpage.save
-      redirect_to ldpage_path(@ldpage)
-    else
-      render :edit
+    if @ldpage.template == Template.first
+      render :show_template01
+    elsif @ldpage.template == Template.second
+      render :show_template02
     end
   end
 
-  def use_this_template
-    @template = Template.find(params[:template_id])
-    @ldpage = Ldpage.new(ldpage_params)
-    @ldpage.user = current_user
-    @ldpage.template = @template
-    @ldpage.save
-    redirect_to :edit
-  end
-
-  def template01
-    @ldpage = Ldpage.find(params[:id])
-    @ldpage.temp
-    @ldpage.user = current_user
-    @ldpage.save!
-  end
-
-  def template02
-    @ldpage = Ldpage.find(params[:id])
-    @ldpage.user = current_user
-    @ldpage.save!
-  end
-
-
-  def use_template01
-    @ldpage = Ldpage.new(ldpage_params)
-    @ldpage.user = current_user
-    if @ldpage.save
-      redirect_to ldpage_path(@ldpage)
-    else
-      render "templates/_template01"
-    end
-  end
-
-
-  def create
-    @ldpage = Ldpage.new(ldpage_params)
-    @ldpage.user = current_user
-    if @ldpage.save
-      redirect_to ldpage_path(@ldpage)
-    else
-      render "templates/_template01"
-    end
-  end
 
   def update
     @ldpage = Ldpage.find(params[:id])
