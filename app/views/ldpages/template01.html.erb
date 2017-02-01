@@ -37,6 +37,7 @@
   <div class="jumbotron">
     <div class="container" style="text-align: center">
       <h1><%= f.input_field :text02, placeholder: "一句话形容自己" %></h1>
+      <%= f.input_field :image01, as: :file %>
       <p><%= f.input_field :text03, placeholder: "简要的解释说明" %></p>
       <p><%= f.input_field :text04, placeholder: "CALL TO ACTION"%></p>
     </div>
@@ -46,17 +47,32 @@
     <!-- Example row of columns -->
     <div class="row">
       <div class="col-md-4">
-        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <% if @ldpage.image02.present? %>
+          <%= image_tag(@ldpage.image02.thumb.url) %>
+        <% else %>
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <% end %>
+        <p><%= f.input_field :image02, as: :file %></p>
         <h2><%= f.input_field :text05, placeholder: "使用此服务的三大好处之一"%></h2>
         <p><%= f.input_field :text06, placeholder: "简要的解释说明"%></p>
       </div>
       <div class="col-md-4">
-        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <% if @ldpage.image03.present? %>
+          <%= image_tag(@ldpage.image03.thumb.url) %>
+        <% else %>
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <% end %>
+        <p><%= f.input_field :image03, as: :file %></p>
         <h2><%= f.input_field :text07, placeholder: "使用此服务的三大好处之二"%></h2>
         <p><%= f.input_field :text08, placeholder: "简要的解释说明"%></p>
      </div>
       <div class="col-md-4">
-        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <% if @ldpage.image04.present? %>
+          <%= image_tag(@ldpage.image04.thumb.url) %>
+        <% else %>
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <% end %>
+        <p><%= f.input_field :image04, as: :file %></p>
         <h2><%= f.input_field :text09, placeholder: "使用此服务的三大好处之三"%></h2>
         <p><%= f.input_field :text10, placeholder: "简要的解释说明"%></p>
       </div>
@@ -75,17 +91,32 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <% if @ldpage.image05.present? %>
+          <%= image_tag(@ldpage.image05.thumb.url) %>
+        <% else %>
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <% end %>
+        <p><%= f.input_field :image05, as: :file %></p>
         <h2><%= f.input_field :text13, placeholder: "使用者一"%></h2>
         <p><%= f.input_field :text14, placeholder: "使用者见证"%></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <% if @ldpage.image06.present? %>
+          <%= image_tag(@ldpage.image06.thumb.url) %>
+        <% else %>
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <% end %>
+        <p><%= f.input_field :image06, as: :file %></p>
         <h2><%= f.input_field :text15, placeholder: "使用者二"%></h2>
         <p><%= f.input_field :text16, placeholder: "使用者见证"%></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <% if @ldpage.image07.present? %>
+          <%= image_tag(@ldpage.image07.thumb.url) %>
+        <% else %>
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <% end %>
+        <p><%= f.input_field :image07, as: :file %></p>
         <h2><%= f.input_field :text17, placeholder: "使用者三"%></h2>
         <p><%= f.input_field :text18, placeholder: "使用者见证"%></p>
       </div><!-- /.col-lg-4 -->
