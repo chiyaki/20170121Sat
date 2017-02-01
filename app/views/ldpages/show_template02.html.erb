@@ -49,17 +49,29 @@
   <!-- Example row of columns -->
   <div class="row">
     <div class="col-md-4">
-      <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% if @ldpage.image02.present? %>
+        <%= image_tag(@ldpage.image02.thumb.url) %>
+      <% else %>
+        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% end %>
       <h2><%= @ldpage.text05 %></h2>
       <p><%= @ldpage.text06 %></p>
     </div>
     <div class="col-md-4">
-      <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% if @ldpage.image03.present? %>
+        <%= image_tag(@ldpage.image03.thumb.url) %>
+      <% else %>
+        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% end %>
       <h2><%= @ldpage.text07 %></h2>
       <p><%= @ldpage.text08 %></p>
    </div>
     <div class="col-md-4">
-      <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% if @ldpage.image04.present? %>
+        <%= image_tag(@ldpage.image04.thumb.url) %>
+      <% else %>
+        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% end %>
       <h2><%= @ldpage.text09 %></h2>
       <p><%= @ldpage.text10 %></p>
     </div>
@@ -77,17 +89,29 @@
   <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-lg-4">
-      <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% if @ldpage.image05.present? %>
+        <%= image_tag(@ldpage.image05.thumb.url) %>
+      <% else %>
+        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% end %>
       <h2><%= @ldpage.text13 %></h2>
       <p><%= @ldpage.text14 %></p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
-      <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% if @ldpage.image06.present? %>
+        <%= image_tag(@ldpage.image06.thumb.url) %>
+      <% else %>
+        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% end %>
       <h2><%= @ldpage.text15 %></h2>
       <p><%= @ldpage.text16 %></p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
-      <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% if @ldpage.image07.present? %>
+        <%= image_tag(@ldpage.image07.thumb.url) %>
+      <% else %>
+        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <% end %>
       <h2><%= @ldpage.text17 %></h2>
       <p><%= @ldpage.text18 %></p>
     </div><!-- /.col-lg-4 -->
