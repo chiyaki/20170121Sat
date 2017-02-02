@@ -34,12 +34,11 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
 <% if @ldpage.image01.present? %>
-  <div class="jumbotron" style="backgroud-image: url(@ldpage.image01_url); height: 100vh">
+  <div class="bgimage">
     <div class="container" style="text-align: center">
       <div class="pull-right">
         <%= link_to("修改landing page", edit_ldpage_path(@ldpage)) %>
       </div>
-
       <h1><%= @ldpage.text02 %></h1>
       <p><%= simple_format(@ldpage.text03) %></p>
       <p><a class="btn btn-primary btn-lg" href="#" role="button"><%= @ldpage.text04 %></a></p>
@@ -51,7 +50,6 @@
       <div class="pull-right">
         <%= link_to("修改landing page", edit_ldpage_path(@ldpage)) %>
       </div>
-
       <h1><%= @ldpage.text02 %></h1>
       <p><%= simple_format(@ldpage.text03) %></p>
       <p><a class="btn btn-primary btn-lg" href="#" role="button"><%= @ldpage.text04 %></a></p>
