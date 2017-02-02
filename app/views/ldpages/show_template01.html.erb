@@ -34,7 +34,7 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
 <% if @ldpage.image01.present? %>
-  <div class="jumbotron" style="backgroud-image: url(@ldpage.image01_url; height: 100vh)">
+  <div class="jumbotron" style="backgroud-image: url(@ldpage.image01_url); height: 100vh">
     <div class="container" style="text-align: center">
       <div class="pull-right">
         <%= link_to("修改landing page", edit_ldpage_path(@ldpage)) %>
